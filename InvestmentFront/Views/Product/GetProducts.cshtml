@@ -1,0 +1,10 @@
+﻿@using InvestmentFront.Models
+@model IEnumerable<ProductInfo>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+@foreach (var product in Model) {
+    <partial name="ProductSummaryPartial" model="@product" />
+}

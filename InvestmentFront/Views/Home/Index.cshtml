@@ -1,0 +1,66 @@
+﻿@model IEnumerable<LoanViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-sm table-striped table-hover border-bottom">
+                <tbody>
+                    @if (Model.Count() > 0) {
+                        @foreach (var item in Model) {
+                    <tr>
+                        <td class="d-none d-lg-table-cell">
+                            @Html.LabelFor(modelItem => item.AgreementNumber) :  @Html.DisplayFor(modelItem => item.AgreementNumber)
+                            <br />
+                            @Html.LabelFor(modelItem => item.CreditAmount) : @Html.DisplayFor(modelItem => item.CreditAmount)
+                            <br />
+                            @Html.LabelFor(modelItem => item.Amount) : @Html.DisplayFor(modelItem => item.Amount)
+                        </td>
+                        <td>
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="table table-sm table-striped table-hover border-bottom">
+                                        <tbody>
+                                                @foreach (var sch in item.Schedule) {
+                                            <tr>
+                                                <td class="d-none d-lg-table-cell">
+                                                    @Html.DisplayFor(modelItem => sch.Id)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => sch.PaymentDate)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => sch.Payment)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => sch.Body)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => sch.Percent)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => sch.Left)
+                                                </td>
+                                            </tr>
+                                                }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                        }
+                    } else {
+                        <tr>
+                            <td colspan="6" class="text-center">
+                                No Food Found
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
