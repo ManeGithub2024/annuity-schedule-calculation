@@ -1,5 +1,14 @@
 # ====================================================================
-# [ 1. ВИТОКИ ЗБІРКИ ТА БІНАРНІ ФАЙЛИ ]
+# PROJECT: Enterprise .NET Application
+# DESCRIPTION: Comprehensive gitignore for VS2022, Rider, and Docker
+# LAST UPDATED: 2026-01-29
+# ====================================================================
+
+# Standard Encoding: UTF-8 / ASCII
+# All comments are in English as per project standards.
+
+# ====================================================================
+# [ 1. BUILD OUTPUT AND BINARIES ]
 # ====================================================================
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -7,60 +16,318 @@
 [Rr]eleases/
 x64/
 x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
+[Dd]ebugPS/
+[Rr]eleasePS/
+dlldata.c
 
 # ====================================================================
-# [ 2. VISUAL STUDIO - ТИМЧАСОВІ ТА ПЕРСОНАЛЬНІ ФАЙЛИ ]
+# [ 2. VISUAL STUDIO CACHE & USER FILES ]
 # ====================================================================
 .vs/
+*.rsuser
+*.suo
 *.user
 *.userosscache
 *.sln.docstates
-*.suo
-*.v12.suo
-*.v14.suo
-*.v15.suo
-*.v16.suo
-*.v17.suo
-*.cache
+*.userprefs
+mono_crash.*
+Generated\ Files/
+*.psess
+*.vsp
+*.vspx
+*.sap
+*.e2e
+$tf/
+*.gpState
+
+# New Visual Studio Solution format (SLNX)
+.slnx/
+
+# Visual Studio indexing and temp files
+*.[Cc]ache
+!?*.[Cc]ache/
 *.opendb
 *.ide
 *.VC.db
 *.VC.VC.opendb
+*.ncb
+*.aps
+*.sdf
+*.cachefile
+*.binlog
 
 # ====================================================================
-# [ 3. JETBRAINS (RIDER, RESHARPER) ]
+# [ 3. JETBRAINS RIDER & RESHARPER ]
 # ====================================================================
 _ReSharper*/
-*.[Rr]e[Ss]harper.user
+*.[Rr]e[Ss]harper
 *.DotSettings.user
 .idea/
+*.sln.iml
 
 # ====================================================================
-# [ 4. VS CODE ]
+# [ 4. VISUAL STUDIO CODE ]
 # ====================================================================
-.vscode/
-# Залишаємо налаштування проекту, якщо команда домовилась про спільний стиль
+.vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+*.code-workspace
 .history/
 
 # ====================================================================
-# [ 5. ПАКЕТНІ МЕНЕДЖЕРИ (NUGET, NPM, LIBMAN) ]
+# [ 5. TESTING AND CODE ANALYSIS ]
 # ====================================================================
-# NuGet
-packages/*
-!packages/repositories.config
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+TestResult.xml
+nunit-*.xml
+*.VisualState.xml
+BenchmarkDotNet.Artifacts/
+_Chutzpah*
+OpenCover/
+ASALocalRun/
+
+# Code Coverage
+*.dotCover
+.axoCover/
+!.axoCover/settings.json
+coverage*.json
+coverage*.xml
+coverage*.info
+*.coverage
+*.coveragexml
+
+# ====================================================================
+# [ 6. NCRUNCH ]
+# ====================================================================
+_NCrunch_*
+.*crunch*.local.xml
+nCrunchTemp_*
+
+# ====================================================================
+# [ 7. MIGHTYMOOSE ]
+# ====================================================================
+*.mm.*
+AutoTest.Net/
+
+# ====================================================================
+# [ 8. DOCPROJECT ]
+# ====================================================================
+DocProject/buildhelp/
+DocProject/Help/*.HxT
+DocProject/Help/*.HxC
+DocProject/Help/*.hhc
+DocProject/Help/*.hhk
+DocProject/Help/*.hhp
+DocProject/Help/Html2
+DocProject/Help/html
+
+# ====================================================================
+# [ 9. PACKAGE MANAGERS (NUGET, NPM, PAKET, FAKE) ]
+# ====================================================================
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
 *.nuget.props
 *.nuget.targets
-
-# Node.js
+project.lock.json
+project.fragment.lock.json
+artifacts/
+.tye/
+.paket/
+paket-files/
+.fake/
 node_modules/
 npm-debug.log*
+.ntvs_analysis.dat
 
-# LibMan
+# ====================================================================
+# [ 10. WINDOWS APP PACKAGING & BUNDLES ]
+# ====================================================================
+AppPackages/
+BundleArtifacts/
+Package.StoreAssociation.xml
+_pkginfo.txt
+*.appx
+*.appxbundle
+*.appxupload
+
+# ====================================================================
+# [ 11. PUBLISH & DOCKER ]
+# ====================================================================
+*.publishsettings
+*.pubxml
+*.azurePubxml
+*.[Pp]ublish.xml
+PublishScripts/
+.dockerignore
+
+# ====================================================================
+# [ 12. SECURITY & SECRETS ]
+# ====================================================================
+*.pfx
+*.snk
+*.snk.keys
+appsettings.Local.json
+.env
+.env.local
+.usersecrets
+
+# ====================================================================
+# [ 13. DATABASE & BACKUPS ]
+# ====================================================================
+*.mdf
+*.ldf
+*.ndf
+*.rptproj.bak
+*.bak
+_UpgradeReport_Files/
+Backup*/
+UpgradeLog*.XML
+UpgradeLog*.htm
+ServiceFabricBackup/
+
+# ====================================================================
+# [ 14. OS SPECIFIC (WINDOWS & MAC) ]
+# ====================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+Icon
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+desktop.ini
+$RECYCLE.BIN/
+*.stackdump
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# ====================================================================
+# [ 15. GIT MAINTENANCE & MERGE ]
+# ====================================================================
+*.orig
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+*_BACKUP_*.txt
+*_BASE_*.txt
+*_LOCAL_*.txt
+*_REMOTE_*.txt
+
+# ====================================================================
+# [ 16. SQL SERVER & DATA TOOLS ]
+# ====================================================================
+*.sqlproj.user
+*.dacpac
+# SQL Server local database files (redundancy check)
+*.mdf
+*.ldf
+
+# ====================================================================
+# [ 17. ADDITIONAL DOCUMENTATION & REPORTS ]
+# ====================================================================
+# Help file builder and other doc tools
+_vti_cnf/
+_vti_pvt/
+_vti_txt/
+_vti_script/
+# Visual Studio Project Reports
+*.rdl.data
+*.rdl.user
+
+# ====================================================================
+# [ 18. SCRATCH & TEMPORARY WORK ]
+# ====================================================================
+[Ss]cratch/
+[Tt]emp/
+[Tt]mp/
+# Personal developer notes
+notes.txt
+todo.txt
+
+# ====================================================================
+# [ 19. FINAL OVERRIDES / EXCEPTIONS ]
+# ====================================================================
+# Ensure we don't accidentally ignore important build scripts
+!build.ps1
+!build.sh
+!*.sln
+!*.csproj
+!*.vbproj
+
+# ====================================================================
+# [ 20. CUSTOM AUTOMATION & TOOLING ]
+# ====================================================================
+# Local automation scripts logs
+*.log
+!/scripts/*.log
+# Deployment artifacts (if not covered in bin/obj)
+_deploy/
+_publish/
+
+# ====================================================================
+# [ 21. MISCELLANEOUS ]
+# ====================================================================
+# Potential large data dumps
+*.csv
+*.json.bak
+*.xml.bak
+# Web-related leftovers
+.sass-cache/
+connect.lock
+sysinfo.chk
+
+# ====================================================================
+# [ 22. CLOUD & ENTERPRISE CI ]
+# ====================================================================
+# Azure Cloud Services
+csx/
+*.ecfg
+*.cscfg
+*.csdef
+webjobs-list.json
+.azure/
+
+# Entity Framework Core bundles
+*.efbundle
+
+# Continuous Integration
+.teamcity/
+.jenkins/
+
+# Libman (Library Manager)
+wwwroot/lib/
+
+# ====================================================================
+# [ END OF FILE ]
+# ====================================================================
